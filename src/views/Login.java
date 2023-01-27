@@ -45,7 +45,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        textField1 = new java.awt.TextField();
+        textField1 = new JPasswordField(10);
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         textField2 = new java.awt.TextField();
@@ -57,7 +57,7 @@ public class Login extends javax.swing.JFrame {
         label1.setBackground(new java.awt.Color(204, 204, 204));
         label1.setText("memberId or AdminId:");
 
-        label2.setText("FirstName:");
+        label2.setText("Password");
 
         label3.setBackground(new java.awt.Color(0, 102, 153));
         label3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
@@ -250,7 +250,7 @@ public class Login extends javax.swing.JFrame {
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
-    private java.awt.TextField textField1;
+    private JPasswordField textField1;
     private java.awt.TextField textField2;
     // End of variables declaration//GEN-END:variables
 }
