@@ -51,7 +51,7 @@ public class NewBookFrom extends javax.swing.JFrame {
         button1 = new java.awt.Button();
         textField7 = new java.awt.TextField();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         label1.setText("Title:");
 
@@ -63,11 +63,11 @@ public class NewBookFrom extends javax.swing.JFrame {
 
         label5.setText("Author information:");
 
-        label6.setText("Title:");
+        label6.setText("firstName");
 
-        label7.setText("Title:");
+        label7.setText("LastName:");
 
-        label8.setText("Title:");
+        label8.setText("Phone:");
 
         label9.setText("bio:");
 

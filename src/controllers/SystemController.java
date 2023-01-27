@@ -27,7 +27,7 @@ public class SystemController {
     public boolean checkOutBook(String isbn,  String memberid){
        Book book= dataAccess.getBook(isbn);
        LibraryMember member= dataAccess.getLibraryMember(memberid);
-        System.out.println(book.isAvailabe());
+
        if(book.isAvailabe()) {
 
            CheckOutRecordEntry checkOutRecordEntry = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now().plusDays(Long.valueOf(""+book.getmax()) ),book.getAvailableCopy());

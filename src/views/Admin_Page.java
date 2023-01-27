@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -84,6 +84,11 @@ public class Admin_Page extends javax.swing.JFrame {
 
     public void addRowToTable(){
         DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        jTable1.getColumnModel().getColumn(0).setHeaderValue("Title");
+        jTable1.getColumnModel().getColumn(1).setHeaderValue("ISBN");
+        jTable1.getColumnModel().getColumn(2).setHeaderValue("Author");
+        jTable1.getColumnModel().getColumn(3).setHeaderValue("AvailableCopies");
+        jTable1.getTableHeader().repaint();
         model.setRowCount(0);
         DataAccessFacade da= new DataAccessFacade();
         HashMap<String,Book> books= da.readBooksMap();
@@ -99,9 +104,46 @@ public class Admin_Page extends javax.swing.JFrame {
         }
 
     }
+    public void checkOutBookRecord(){
+        int a= jTable1.getSelectedRow();
+        String key = (String) jTable1.getValueAt(a, 2);
+        DataAccessFacade da= new DataAccessFacade();
+        LibraryMember member1= da.getLibraryMember(key);
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(CheckoutRecordDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CheckoutRecordDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CheckoutRecordDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CheckoutRecordDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CheckoutRecordDetail(member1).setVisible(true);
+            }
+        });
+
+
+    }
     public void addmemberToTable(){
         DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
+        jTable1.getColumnModel().getColumn(0).setHeaderValue("FirstName");
+        jTable1.getColumnModel().getColumn(1).setHeaderValue("LastName");
+        jTable1.getColumnModel().getColumn(2).setHeaderValue("MemberId");
+        jTable1.getColumnModel().getColumn(3).setHeaderValue("Phone");
+        jTable1.getTableHeader().repaint();
         DataAccessFacade da= new DataAccessFacade();
         HashMap<String,LibraryMember> members= da.readMemberMap();
         Object[] rowData =new Object[members.size()];
@@ -111,7 +153,7 @@ public class Admin_Page extends javax.swing.JFrame {
             rowData[0]=members.get(memberid.get(i)).getFirstName();
             rowData[1]=members.get(memberid.get(i)).getLastName();
             rowData[2]=members.get(memberid.get(i)).getMemberId();
-            rowData[3]=members.get(memberid.get(i)).getAddress().getCity();
+            rowData[3]=members.get(memberid.get(i)).getPhone();
             model.addRow(rowData);
         }
 
@@ -136,10 +178,10 @@ public class Admin_Page extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         button4 = new java.awt.Button();
         button5 = new java.awt.Button();
-        button6 = new java.awt.Button();
         label1 = new java.awt.Label();
         button7 = new java.awt.Button();
         button8 = new java.awt.Button();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,14 +241,6 @@ public class Admin_Page extends javax.swing.JFrame {
             }
         });
 
-        button6.setForeground(new java.awt.Color(255, 0, 0));
-        button6.setLabel("CheckOut");
-        button6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button6ActionPerformed(evt);
-            }
-        });
-
         label1.setBackground(new java.awt.Color(0, 102, 153));
         label1.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,6 +260,13 @@ public class Admin_Page extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setLabel("CheckoutRecord");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(button1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -233,10 +274,10 @@ public class Admin_Page extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(button6, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(label1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button7, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(button8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -248,7 +289,7 @@ public class Admin_Page extends javax.swing.JFrame {
                     .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -262,9 +303,9 @@ public class Admin_Page extends javax.swing.JFrame {
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(19, 19, 19)
-                                .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)
-                                .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addGap(20, 20, 20))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -284,21 +325,23 @@ public class Admin_Page extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)))
+                        .addGap(34, 34, 34))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
@@ -331,10 +374,7 @@ public class Admin_Page extends javax.swing.JFrame {
         addRowToTable();
     }//GEN-LAST:event_button5ActionPerformed
 
-    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
-        // TODO add your handling code here:
-        checkOutABook();
-    }//GEN-LAST:event_button6ActionPerformed
+
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
@@ -433,6 +473,11 @@ public class Admin_Page extends javax.swing.JFrame {
 
     }//GEN-LAST:event_button3ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        checkOutBookRecord();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -474,9 +519,9 @@ public class Admin_Page extends javax.swing.JFrame {
     private java.awt.Button button3;
     private java.awt.Button button4;
     private java.awt.Button button5;
-    private java.awt.Button button6;
     private java.awt.Button button7;
     private java.awt.Button button8;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
