@@ -8,6 +8,16 @@ public class CheckOutRecordEntry implements Serializable {
     private LocalDate dueDate,chekOutDate;
     private BookCopy bookCopy;
 
+    private boolean returned = false;
+
+    public void setReturned(boolean returned) {
+        this.returned = returned;
+    }
+
+    public boolean isReturned() {
+        return returned;
+    }
+
     public CheckOutRecordEntry(LocalDate dueDate, LocalDate chekOutDate, BookCopy bC) {
         this.dueDate = dueDate;
         this.chekOutDate = chekOutDate;

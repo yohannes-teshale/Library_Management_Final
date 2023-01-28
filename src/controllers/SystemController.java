@@ -7,6 +7,7 @@ import models.*;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SystemController {
 
@@ -46,14 +47,31 @@ public class SystemController {
 
 
     }
+    public boolean returnBook(int copyN,String memberid, String isbn1){
+        LibraryMember member= dataAccess.getLibraryMember(memberid);
+        System.out.println(isbn1);
+        Book book = dataAccess.getBook(isbn1);
+        book.returnaBook(copyN);
+       member.getCheckOutRecord().getCheckoutRecordEntryFromIsbnAndCopyN(isbn1, copyN).setReturned(true);
+
+
+
+        dataAccess.saveNewMember(member);
+        dataAccess.saveNewBook(book);
+        return true;
+    }
 
 
     public static void main(String[] args) {
-
+        DataAccessFacade dataAccess= new DataAccessFacade();
         SystemController systemController= new SystemController();
+        //systemController.returnBook(1,"1001","99-22223"  );
+        //LibraryMember member= dataAccess.getLibraryMember("1001");
+
         systemController.checkOutBook("99-22223","1001");
-        DataAccessFacade da= new DataAccessFacade();
-        System.out.println(da.getLibraryMember("1001").getCheckOutRecord());
+
+
+
 
     }
 }

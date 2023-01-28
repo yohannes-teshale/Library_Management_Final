@@ -24,6 +24,22 @@ public class CheckoutRecord implements Serializable {
   public List<CheckOutRecordEntry> getEntry() {
     return entry;
   }
+  public BookCopy getBookCopyByNumber(int cp){
+    BookCopy temp;
+    for(CheckOutRecordEntry e: entry){
+      if(e.getBookCopy().getCopyNum()==cp)
+        return e.getBookCopy();
+    }
+    return null;
+  }
+  public CheckOutRecordEntry getCheckoutRecordEntryFromIsbnAndCopyN(String isbn, int cn){
+    for(CheckOutRecordEntry e: entry){
+      if(e.getBookCopy().getCopyNum()==cn && e.getBookCopy().getBook().getIsbn().equals(isbn)){
+        return e;
+      }
+    }
+    return null;
+  }
 
   @Override
   public String toString() {

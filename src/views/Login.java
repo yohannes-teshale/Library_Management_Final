@@ -3,6 +3,7 @@ package views;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import dataaccess.Auth;
 import dataaccess.DataAccessFacade;
 import dataaccess.User;
 import models.LibraryMember;
@@ -136,45 +137,46 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String Id= textField2.getText();
         DataAccessFacade da= new DataAccessFacade();
-        HashMap<String, LibraryMember> members = da.readMemberMap();
-        if(members.containsKey(Id)){
-            this.user= da.getLibraryMember(Id);
-            if(!user.getFirstName().equals(textField1.getText())){ JOptionPane.showMessageDialog(rootPane,"incorrect credentials");return;}
+//        HashMap<String, LibraryMember> members = da.readMemberMap();
+//        if(members.containsKey(Id)){
+//            this.user= da.getLibraryMember(Id);
+//            if(!user.getFirstName().equals(textField1.getText())){ JOptionPane.showMessageDialog(rootPane,"incorrect credentials");return;}
+//
+//
+//            //MEMBER_PAGE
+//            try {
+//                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                    if ("Nimbus".equals(info.getName())) {
+//                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                        break;
+//                    }
+//                }
+//            } catch (ClassNotFoundException ex) {
+//                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            } catch (InstantiationException ex) {
+//                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            } catch (IllegalAccessException ex) {
+//                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            }
+//            //</editor-fold>
+//
+//            /* Create and display the form */
+//            java.awt.EventQueue.invokeLater(new Runnable() {
+//                public void run() {
+//                    new memberPage(user).setVisible(true);
+//                }
+//            });
 
 
-            //MEMBER_PAGE
-            try {
-                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
-                }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(memberPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            }
-            //</editor-fold>
 
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new memberPage(user).setVisible(true);
-                }
-            });
-
-
-
-        }
-        else if(da.readUserMap().containsKey(Id)){
+//        }
+         if(da.readUserMap().containsKey(Id)){
 
             User user1 = da.readUserMap().get(Id);
             String passowrd= textField1.getText();
+
             if(!user1.getPassword().equals(passowrd)){JOptionPane.showMessageDialog(rootPane,"incorrect credentials");return;}
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -195,11 +197,19 @@ public class Login extends javax.swing.JFrame {
             //</editor-fold>
 
             /* Create and display the form */
+
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new Admin_Page().setVisible(true);
+                    if(user1.getAuthorization().equals(Auth.ADMIN)) {
+                        new Admin_Page().setVisible(true);
+                    } else if (user1.getAuthorization().equals(Auth.LIBRARIAN)) {
+                        new LibrarianPage().setVisible(true);
+
+                    }
                 }
+
             });
+            dispose();
 
         }
         else{

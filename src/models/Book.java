@@ -28,10 +28,7 @@ public class Book implements Serializable {
     }
 
     public void addCopy() {
-        int size;
-        if(bookCopyList==null) size=0;
-        else size=1;
-        BookCopy bookCopy= new BookCopy(size+1,this);
+        BookCopy bookCopy= new BookCopy(bookCopyList.size()+1,this);
         bookCopy.setIsAvailable(true);
        bookCopyList.add(bookCopy);
     }
@@ -58,6 +55,14 @@ public class Book implements Serializable {
         }
         return null;
     }
+    public BookCopy getUnAvailableCopy(){
+        for(BookCopy bc: bookCopyList){
+            if(!bc.isAvailable()){
+                return bc;
+            }
+        }
+        return null;
+    }
     public int numberofAvailableCopies(){
         int count=0;
         for(BookCopy bc: bookCopyList){
@@ -67,6 +72,14 @@ public class Book implements Serializable {
         }
         return count;
 
+    }
+    public boolean returnaBook(int cN){
+        for(BookCopy b:bookCopyList){
+            if(b.getCopyNum()==cN){
+                b.setIsAvailable(true);
+            }
+        }
+    return true;
     }
 
     public Object getmax() {

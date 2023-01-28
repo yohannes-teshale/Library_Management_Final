@@ -37,7 +37,7 @@ public class CheckoutRecordDetail extends javax.swing.JFrame {
             rowData[0]=member.getCheckOutRecord().getEntry().get(i).getBookCopy().getBook().getTitle();
             rowData[1]= member.getCheckOutRecord().getEntry().get(i).getDueDate();
             rowData[2]= member.getCheckOutRecord().getEntry().get(i).getChekOutDate();
-            rowData[3]= "0";
+            rowData[3]= member.getCheckOutRecord().getEntry().get(i).getBookCopy().getBook().getIsbn();
             model.addRow(rowData);
         }
 
@@ -126,7 +126,7 @@ public class CheckoutRecordDetail extends javax.swing.JFrame {
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new CheckoutRecordDetail().setVisible(true);
+//                new CheckoutRecordDetail(]).setVisible(true);
 //            }
 //        });
     }
