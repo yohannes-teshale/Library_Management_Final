@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c3122c2-cd49-4609-9c04-ebc0882aebe0" name="Changes" comment="" />
+    <list default="true" id="5c3122c2-cd49-4609-9c04-ebc0882aebe0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/images/Screenshot 2023-01-27 at 11.37.58 PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Screenshot 2023-01-27 at 11.39.39 PM (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Screenshot 2023-01-27 at 11.42.00 PM (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Screenshot 2023-01-27 at 11.42.04 PM (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Screenshot 2023-01-27 at 11.42.08 PM (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/yohannes/eclipse-workspace/LibraryManagment/LIbrary_Managment_final/src",
+    "last_opened_file_path": "/Users/yohannes/eclipse-workspace/LibraryManagment/LIbrary_Managment_final/src/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -139,7 +146,7 @@
       <updated>1674596826902</updated>
       <workItem from="1674596828220" duration="60250000" />
       <workItem from="1674713458714" duration="544000" />
-      <workItem from="1674754514651" duration="38741000" />
+      <workItem from="1674754514651" duration="40103000" />
     </task>
     <servers />
   </component>
