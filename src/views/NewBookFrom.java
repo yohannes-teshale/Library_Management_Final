@@ -287,12 +287,15 @@ public class NewBookFrom extends javax.swing.JFrame {
             label11.setText("invalid input");
             label11.setForeground(Color.red);
 
-        }else{
+        }else if (phoneNumber.length()!=10){
+            label15.setText("invalid length of phone number");
+            label15.setForeground(Color.red);
+        }else {
             int maxdays=Integer.parseInt(textField3.getText());
-//            Address address= new Address("101 S. Main", "Fairfield", "IA", "52556");
-//            Author author= new Author(firstName,lastName,phoneNumber,address,bio);
-//            SystemController sc= new SystemController();
-//            sc.addNewBook(isbn,title,maxdays, Arrays.asList(author));
+            Address address= new Address("101 S. Main", "Fairfield", "IA", "52556");
+            Author author= new Author(firstName,lastName,phoneNumber,address,bio);
+            SystemController sc= new SystemController();
+            sc.addNewBook(isbn,title,maxdays, Arrays.asList(author));
             JOptionPane.showMessageDialog( new JFrame(),"Book successfully registered!");
             dispose();
 

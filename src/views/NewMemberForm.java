@@ -294,6 +294,8 @@ public class NewMemberForm extends javax.swing.JFrame {
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
+        DataAccessFacade da= new DataAccessFacade();
+
 
         String firstName= textField1.getText();
         String lastName= textField2.getText();
@@ -315,7 +317,7 @@ public class NewMemberForm extends javax.swing.JFrame {
             label13.setForeground(Color.red);
         }else if (PhoneNumber.equals("")){
             label14.setText("invalid input");
-            label15.setForeground(Color.red);
+            label14.setForeground(Color.red);
         }else if (state.equals("")){
             label17.setText("invalid input");
             label17.setForeground(Color.red);
@@ -328,6 +330,12 @@ public class NewMemberForm extends javax.swing.JFrame {
         }else if (city.equals("")){
             label16.setText("invalid input");
             label16.setForeground(Color.red);
+        }else if (da.getLibraryMember(memberId)!=null){
+            label13.setText("Member Already Exists");
+            label13.setForeground(Color.red);
+        }else if (PhoneNumber.length()!=10){
+            label14.setText("invalid length of phone number");
+            label14.setForeground(Color.red);
         }
         else{
             SystemController sc= new SystemController();
