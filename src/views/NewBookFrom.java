@@ -5,6 +5,8 @@ package views;/*
 
 import controllers.SystemController;
 import java.awt.Color;
+
+import dataaccess.DataAccessFacade;
 import models.Address;
 import models.Author;
 import models.Book;
@@ -250,6 +252,9 @@ public class NewBookFrom extends javax.swing.JFrame {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
+
+        DataAccessFacade da= new DataAccessFacade();
+
         String title=textField1.getText();
         String isbn=textField2.getText();
 
@@ -278,12 +283,16 @@ public class NewBookFrom extends javax.swing.JFrame {
         }else if (bio.equals("")){
             label16.setText("invalid input");
             label16.setForeground(Color.red);
-        }else {
+        }else if(da.getBook(isbn)!=null){
+            label11.setText("invalid input");
+            label11.setForeground(Color.red);
+
+        }else{
             int maxdays=Integer.parseInt(textField3.getText());
-            Address address= new Address("101 S. Main", "Fairfield", "IA", "52556");
-            Author author= new Author(firstName,lastName,phoneNumber,address,bio);
-            SystemController sc= new SystemController();
-            sc.addNewBook(isbn,title,maxdays, Arrays.asList(author));
+//            Address address= new Address("101 S. Main", "Fairfield", "IA", "52556");
+//            Author author= new Author(firstName,lastName,phoneNumber,address,bio);
+//            SystemController sc= new SystemController();
+//            sc.addNewBook(isbn,title,maxdays, Arrays.asList(author));
             JOptionPane.showMessageDialog( new JFrame(),"Book successfully registered!");
             dispose();
 
@@ -312,6 +321,7 @@ public class NewBookFrom extends javax.swing.JFrame {
 
     private void textField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textField1KeyPressed
         // TODO add your handling code here:
+        label10.setText("");
         
     }//GEN-LAST:event_textField1KeyPressed
 

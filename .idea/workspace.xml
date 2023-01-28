@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5c3122c2-cd49-4609-9c04-ebc0882aebe0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataaccess/storage/MEMBERS" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataaccess/storage/MEMBERS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/NewBookFrom.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewBookFrom.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/NewBookFrom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewBookFrom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/NewMemberForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewMemberForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/NewMemberForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewMemberForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +56,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Login">
+  <component name="RunManager" selected="Application.NewBookFrom">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="views.Login" />
       <module name="LIbrary_Managment_final" />
@@ -130,10 +124,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Login" />
         <item itemvalue="Application.NewBookFrom" />
-        <item itemvalue="Application.NewMemberForm" />
+        <item itemvalue="Application.Login" />
         <item itemvalue="Application.Overdue" />
+        <item itemvalue="Application.NewMemberForm" />
         <item itemvalue="Application.SystemController" />
       </list>
     </recent_temporary>
@@ -148,7 +142,7 @@
       <updated>1674596826902</updated>
       <workItem from="1674596828220" duration="60250000" />
       <workItem from="1674713458714" duration="544000" />
-      <workItem from="1674754514651" duration="37612000" />
+      <workItem from="1674754514651" duration="38369000" />
     </task>
     <servers />
   </component>
