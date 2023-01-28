@@ -6,19 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5c3122c2-cd49-4609-9c04-ebc0882aebe0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataaccess/storage/BOOKS" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataaccess/storage/BOOKS" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataaccess/storage/MEMBERS" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataaccess/storage/MEMBERS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/BookCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/BookCopy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/CheckOutRecordEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CheckOutRecordEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/CheckoutRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CheckoutRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin_Page.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin_Page.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin_Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin_Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/CheckoutRecordDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/CheckoutRecordDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/memberPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/memberPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/memberPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/memberPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/NewBookFrom.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewBookFrom.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/NewBookFrom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewBookFrom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/NewMemberForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewMemberForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/NewMemberForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/NewMemberForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,34 +63,34 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Login">
-    <configuration name="Admin_Page" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="views.Admin_Page" />
-      <module name="LIbrary_Managment_final" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="views.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibrarianPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="views.LibrarianPage" />
-      <module name="LIbrary_Managment_final" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="views.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="views.Login" />
+      <module name="LIbrary_Managment_final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewBookFrom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="views.NewBookFrom" />
+      <module name="LIbrary_Managment_final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewMemberForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="views.NewMemberForm" />
       <module name="LIbrary_Managment_final" />
       <extension name="coverage">
         <pattern>
@@ -137,10 +131,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.NewBookFrom" />
+        <item itemvalue="Application.NewMemberForm" />
         <item itemvalue="Application.Overdue" />
         <item itemvalue="Application.SystemController" />
-        <item itemvalue="Application.LibrarianPage" />
-        <item itemvalue="Application.Admin_Page" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +148,7 @@
       <updated>1674596826902</updated>
       <workItem from="1674596828220" duration="60250000" />
       <workItem from="1674713458714" duration="544000" />
-      <workItem from="1674754514651" duration="30899000" />
+      <workItem from="1674754514651" duration="37612000" />
     </task>
     <servers />
   </component>
