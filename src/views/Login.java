@@ -233,6 +233,8 @@ public class Login extends javax.swing.JFrame {
                     } else if (user1.getAuthorization().equals(Auth.LIBRARIAN)) {
                         new LibrarianPage().setVisible(true);
 
+                    }else if(user1.getAuthorization().equals(Auth.BOTH)){
+                        new Both_Page().setVisible(true);
                     }
                 }
 

@@ -71,6 +71,8 @@ public class LibrarianPage extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        button1.setBackground(new java.awt.Color(0, 102, 153));
+        button1.setForeground(new java.awt.Color(255, 255, 255));
         button1.setLabel("CheckOut Book");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +80,8 @@ public class LibrarianPage extends javax.swing.JFrame {
             }
         });
 
+        button2.setBackground(new java.awt.Color(0, 102, 153));
+        button2.setForeground(new java.awt.Color(255, 255, 255));
         button2.setLabel("Member Checkout Record");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +89,8 @@ public class LibrarianPage extends javax.swing.JFrame {
             }
         });
 
+        button3.setBackground(new java.awt.Color(0, 102, 153));
+        button3.setForeground(new java.awt.Color(255, 255, 255));
         button3.setLabel("Logout");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +98,8 @@ public class LibrarianPage extends javax.swing.JFrame {
             }
         });
 
+        button4.setBackground(new java.awt.Color(0, 102, 153));
+        button4.setForeground(new java.awt.Color(255, 255, 255));
         button4.setLabel("Return a Book");
         button4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +107,8 @@ public class LibrarianPage extends javax.swing.JFrame {
             }
         });
 
+        button5.setBackground(new java.awt.Color(0, 102, 153));
+        button5.setForeground(new java.awt.Color(255, 255, 255));
         button5.setLabel("Overdue");
         button5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,9 +133,7 @@ public class LibrarianPage extends javax.swing.JFrame {
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24)

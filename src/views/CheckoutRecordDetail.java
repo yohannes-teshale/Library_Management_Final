@@ -56,7 +56,7 @@ public class CheckoutRecordDetail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         label1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         label1.setText("CheckOutRecord");
@@ -66,7 +66,7 @@ public class CheckoutRecordDetail extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Book Title", "Checkout Date", "DueDate", "Penality Fee"
+                "Book Title", "Checkout Date", "DueDate", "ISBN"
             }
         ));
         jTable1.setEnabled(false);

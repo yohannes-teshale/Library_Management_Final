@@ -34,7 +34,7 @@ public class SystemController {
            member.addCheckOutRecord(checkOutRecordEntry);
            System.out.println(member.getCheckOutRecord());
            dataAccess.saveNewBook(book);
-           System.out.println("ha");
+
            dataAccess.saveNewMember(member);
        }else return false;
 
@@ -64,11 +64,11 @@ public class SystemController {
     public static void main(String[] args) {
         DataAccessFacade dataAccess= new DataAccessFacade();
         SystemController systemController= new SystemController();
-        //systemController.returnBook(4 ,"1001","99-22223"  );
-        //LibraryMember member= dataAccess.getLibraryMember("1001");
+        systemController.returnBook(1 ,"1001","99-22223"  );
+
 
          //systemController.checkOutBook("99-22223","1001");
-        LibraryMember member = dataAccess.getLibraryMember("1002");
+        LibraryMember member = dataAccess.getLibraryMember("1001");
         Book book = dataAccess.getBook("99-22223");
 
         for(CheckOutRecordEntry e: member.getCheckOutRecord().getEntry()){

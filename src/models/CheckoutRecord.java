@@ -34,7 +34,7 @@ public class CheckoutRecord implements Serializable {
   }
   public CheckOutRecordEntry getCheckoutRecordEntryFromIsbnAndCopyN(String isbn, int cn){
     for(CheckOutRecordEntry e: entry){
-      if(e.getBookCopy().getCopyNum()==cn && e.getBookCopy().getBook().getIsbn().equals(isbn)){
+      if(e.getBookCopy().getCopyNum()==cn && e.getBookCopy().getBook().getIsbn().equals(isbn) && !e.isReturned()){
         return e;
       }
     }
