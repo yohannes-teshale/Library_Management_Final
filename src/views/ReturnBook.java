@@ -129,6 +129,8 @@ public class ReturnBook extends javax.swing.JFrame {
         SystemController s= new SystemController();
 
         s.returnBook((Integer) jTable1.getValueAt(jTable1.getSelectedRow(),4),member.getMemberId(), (String) jTable1.getValueAt(jTable1.getSelectedRow(),3));
+                JOptionPane.showMessageDialog(new JFrame(), "Returned Successfully");
+
 
 
     }//GEN-LAST:event_button1ActionPerformed
