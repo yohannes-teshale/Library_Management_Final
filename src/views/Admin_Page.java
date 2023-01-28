@@ -408,9 +408,11 @@ public class Admin_Page extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+
                 new NewMemberForm().setVisible(true);
             }
         });
+        addmemberToTable();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -439,6 +441,7 @@ public class Admin_Page extends javax.swing.JFrame {
                 new NewBookFrom().setVisible(true);
             }
         });
+        addRowToTable();
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
@@ -449,7 +452,7 @@ public class Admin_Page extends javax.swing.JFrame {
 
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
         // TODO add your handling code here:
-        addmemberToTable();
+        addRowToTable();
     }//GEN-LAST:event_button8ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed

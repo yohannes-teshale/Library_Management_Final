@@ -10,6 +10,7 @@ import models.BookCopy;
 import models.CheckOutRecordEntry;
 import models.LibraryMember;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -60,7 +61,7 @@ public class ReturnBook extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         button1 = new java.awt.Button();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

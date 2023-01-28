@@ -62,7 +62,7 @@ public class NewBookFrom extends javax.swing.JFrame {
         label16 = new java.awt.Label();
         label17 = new java.awt.Label();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         label1.setText("Title:");
 

@@ -31,6 +31,7 @@ public class Book implements Serializable {
         BookCopy bookCopy= new BookCopy(bookCopyList.size()+1,this);
         bookCopy.setIsAvailable(true);
        bookCopyList.add(bookCopy);
+
     }
     public boolean isAvailabe(){
 
@@ -82,7 +83,7 @@ public class Book implements Serializable {
     return true;
     }
 
-    public Object getmax() {
+    public int getmax() {
         return this.maxCheckLength;
     }
 

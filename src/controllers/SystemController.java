@@ -30,10 +30,11 @@ public class SystemController {
        LibraryMember member= dataAccess.getLibraryMember(memberid);
 
        if(book.isAvailabe()) {
-
            CheckOutRecordEntry checkOutRecordEntry = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now().plusDays(Long.valueOf(""+book.getmax()) ),book.getAvailableCopy());
            member.addCheckOutRecord(checkOutRecordEntry);
+           System.out.println(member.getCheckOutRecord());
            dataAccess.saveNewBook(book);
+           System.out.println("ha");
            dataAccess.saveNewMember(member);
        }else return false;
 
@@ -52,11 +53,9 @@ public class SystemController {
         System.out.println(isbn1);
         Book book = dataAccess.getBook(isbn1);
         book.returnaBook(copyN);
+
        member.getCheckOutRecord().getCheckoutRecordEntryFromIsbnAndCopyN(isbn1, copyN).setReturned(true);
-
-
-
-        dataAccess.saveNewMember(member);
+       dataAccess.saveNewMember(member);
         dataAccess.saveNewBook(book);
         return true;
     }
@@ -65,12 +64,16 @@ public class SystemController {
     public static void main(String[] args) {
         DataAccessFacade dataAccess= new DataAccessFacade();
         SystemController systemController= new SystemController();
-        //systemController.returnBook(1,"1001","99-22223"  );
+        //systemController.returnBook(4 ,"1001","99-22223"  );
         //LibraryMember member= dataAccess.getLibraryMember("1001");
 
-        systemController.checkOutBook("99-22223","1001");
+         //systemController.checkOutBook("99-22223","1001");
+        LibraryMember member = dataAccess.getLibraryMember("1002");
+        Book book = dataAccess.getBook("99-22223");
 
-
+        for(CheckOutRecordEntry e: member.getCheckOutRecord().getEntry()){
+            if(e.isReturned()==false) System.out.println(e.getBookCopy().getCopyNum());
+        }
 
 
     }

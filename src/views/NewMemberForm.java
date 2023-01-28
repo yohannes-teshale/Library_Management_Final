@@ -65,7 +65,7 @@ public class NewMemberForm extends javax.swing.JFrame {
 
         button1.setLabel("button1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         label1.setText("LastName");
 

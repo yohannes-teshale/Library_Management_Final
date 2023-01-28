@@ -8,7 +8,11 @@ import models.Book;
 import models.CheckOutRecordEntry;
 import models.LibraryMember;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,7 +44,7 @@ public class Overdue extends javax.swing.JFrame {
         List<LibraryMember> members = mem.values().stream().collect(Collectors.toList());
         for(LibraryMember l: members){
             for(CheckOutRecordEntry e: l.getCheckOutRecord().getEntry()){
-                if(e.getBookCopy().getBook().getIsbn().equals(key)){
+                if(e.getBookCopy().getBook().getIsbn().equals(key) || !e.isReturned()){
                     addRowToTable(l,book,e);
                 }
             }
@@ -51,12 +55,15 @@ public class Overdue extends javax.swing.JFrame {
     public void addRowToTable(LibraryMember member, Book book, CheckOutRecordEntry e) {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
+        Period period=Period.between(LocalDate.now(), LocalDate.parse(e.getDueDate()));
+        int days= Math.abs(period.getDays());
+        double penalityFee= days < book.getmax() ? 0 : days+0.25;
         Object[] rowData = new Object[4];
 
             rowData[0] = member.getFirstName();
             rowData[1] = member.getMemberId();
             rowData[2] = e.getDueDate();
-            rowData[3]= 0;
+            rowData[3]= "$"+penalityFee;
             model.addRow(rowData);
 
     }
@@ -70,7 +77,7 @@ public class Overdue extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

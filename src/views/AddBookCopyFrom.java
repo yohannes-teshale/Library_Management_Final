@@ -6,6 +6,8 @@ package views;/*
 import controllers.SystemController;
 import dataaccess.DataAccessFacade;
 
+import javax.swing.*;
+
 /**
  *
  * @author yohannes
@@ -33,7 +35,7 @@ public class AddBookCopyFrom extends javax.swing.JFrame {
         label2 = new java.awt.Label();
         button1 = new java.awt.Button();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         label1.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         label1.setText("Add Book Copy");
